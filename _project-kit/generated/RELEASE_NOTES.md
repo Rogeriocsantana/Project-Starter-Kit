@@ -8,6 +8,31 @@
 
 ## Project Starter Kit
 
+## [2.2.0] — 2026-07-28
+
+### Adicionado
+
+- Versão estrutural independente em `VERSION`.
+- Governança do Kit com motivação, princípios, modelo de conhecimento e regras
+  de evolução.
+- Propostas leves com origem, nível de evidência, validações e decisão.
+- Templates opcionais de princípios específicos e glossário do domínio.
+- Registro separado da versão do Kit na baseline do produto.
+
+### Alterado
+
+- Ordem de leitura passa a considerar autoridade documental e conhecimento
+  canônico quando aplicável.
+- README, guia e entrada do Kit distinguem navegação de governança.
+- Verificadores validam a estrutura de governança e a consistência da versão.
+
+### Evidência inicial
+
+- Práticas observadas no Portal Maternidade `0.2.0`.
+- Nível atual: `experimental`; implementação no Kit não equivale a validação em
+  múltiplos projetos.
+
+
 ## [2.1.0] — 2026-07-20
 
 ### Adicionado

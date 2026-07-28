@@ -12,6 +12,7 @@ Linha do tempo resumida e append-only do trabalho realizado por pessoas e agente
 | 2026-07-20 | Codex | estrutura do kit | Implementou as visões operacionais automáticas da versão 2.1.0 | dashboard, timeline, dependências, rastreabilidade, releases e contribuições | `scripts/generate-project-views.mjs`; `generated/`; templates e validadores | usar o gerador após alterar suas fontes |
 | 2026-07-20 | Codex | correção de atividade | Confirmou a conclusão posterior da renomeação física | pasta do projeto | workspace atual em `C:\Users\Roger\Desktop\WEB\Projetos\Project-Starter-Kit` | nenhuma pendência de renomeação |
 | 2026-07-20 | Codex | documentação | Criou GIF demonstrativo com dados fictícios e adicionou-o ao README | apresentação do fluxo do kit | `docs/media/project-starter-kit-demo.gif`; `scripts/generate-demo-gif.py`; inspeção visual dos oito quadros principais | reutilizar a mídia no GitHub Pages |
+| 2026-07-28 | Codex | evolução do kit | Implementou a governança experimental 2.2.0 a partir de aprendizados do Portal Maternidade | princípios, autoridade documental, glossário, proposals e versionamento independente | `VERSION`; `governance/`; `proposals/`; `project/DOMAIN_GLOSSARY.md`; `project/PROJECT_PRINCIPLES.md` | validar as práticas em outros tipos de projeto antes de promovê-las a evidência established |
 
 Tipos sugeridos: `descoberta`, `planejamento`, `decisão`, `implementação`, `revisão`, `validação`, `integração`, `documentação` e `estrutura do kit`.
 

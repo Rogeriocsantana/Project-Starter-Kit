@@ -12,6 +12,7 @@
 | 2026-07-20 | Codex — Implementou as visões operacionais automáticas da versão 2.1.0 | `scripts/generate-project-views.mjs`; `generated/`; templates e validadores |
 | 2026-07-20 | Codex — Confirmou a conclusão posterior da renomeação física | workspace atual em `C:\Users\Roger\Desktop\WEB\Projetos\Project-Starter-Kit` |
 | 2026-07-20 | Codex — Criou GIF demonstrativo com dados fictícios e adicionou-o ao README | `docs/media/project-starter-kit-demo.gif`; `scripts/generate-demo-gif.py`; inspeção visual dos oito quadros principais |
+| 2026-07-28 | Codex — Implementou a governança experimental 2.2.0 a partir de aprendizados do Portal Maternidade | `VERSION`; `governance/`; `proposals/`; `project/DOMAIN_GLOSSARY.md`; `project/PROJECT_PRINCIPLES.md` |
 
 ## Fluxo do kit
 

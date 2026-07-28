@@ -74,6 +74,7 @@ for (const name of reportFiles) {
 }
 
 const baseline = read("project/BASELINE.md");
+const kitVersion = read("VERSION").trim() || "não definida";
 const project = read("project/PROJECT.md");
 const projectName = clean(project.match(/-\s*Nome:\s*(.+)/i)?.[1]) || path.basename(projectRoot);
 const baselineVersion = baseline.match(/Versão atual:\s*`([^`]+)`/i)?.[1] ?? "não definida";
@@ -94,6 +95,7 @@ const dashboard = `${header("Dashboard do projeto")}
 
 | Indicador | Valor |
 |---|---:|
+| Starter Kit | ${kitVersion} |
 | Baseline | ${baselineVersion} |
 | Specs | ${specs.length} |
 | Concluídas | ${done} |

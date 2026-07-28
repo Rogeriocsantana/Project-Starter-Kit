@@ -8,6 +8,7 @@
 
 | Indicador | Valor |
 |---|---:|
+| Starter Kit | 2.2.0 |
 | Baseline | 0.1.0 |
 | Specs | 0 |
 | Concluídas | 0 |

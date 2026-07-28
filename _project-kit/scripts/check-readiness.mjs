@@ -12,8 +12,15 @@ const errors = [];
 const warnings = [];
 
 const requiredFiles = [
+  "VERSION",
   "AGENTS_FULL.md",
+  "governance/WHY.md",
+  "governance/PRINCIPLES.md",
+  "governance/KNOWLEDGE_MODEL.md",
+  "governance/GOVERNANCE.md",
   "project/PROJECT.md",
+  "project/PROJECT_PRINCIPLES.md",
+  "project/DOMAIN_GLOSSARY.md",
   "project/CONSTRAINTS.md",
   "project/ARCHITECTURE.md",
   "project/FEATURE_MAP.md",
@@ -36,6 +43,9 @@ const requiredFiles = [
   "CHANGELOG.md",
   "ACTIVITY_LOG.md",
   "generated/README.md",
+  "proposals/README.md",
+  "proposals/INDEX.md",
+  "proposals/_TEMPLATE.md",
   "specs/INDEX.md",
   "specs/CLAIMS.md",
   "specs/QUICK_TASKS_LOG.md",
@@ -66,6 +76,11 @@ const read = (relativePath) => {
   return fs.existsSync(fullPath) ? fs.readFileSync(fullPath, "utf8") : "";
 };
 
+const kitVersion = read("VERSION").trim();
+if (!/^\d+\.\d+\.\d+$/.test(kitVersion)) {
+  errors.push(`VERSION não contém uma versão semântica válida: ${kitVersion || "vazio"}.`);
+}
+
 for (const relativePath of requiredFiles) {
   if (!fs.existsSync(path.join(root, relativePath))) {
     errors.push(`Arquivo obrigatório ausente: ${relativePath}`);
@@ -92,8 +107,14 @@ const baseline = read("project/BASELINE.md");
 const baselineMatch = baseline.match(/Versão atual:\s*`([^`]+)`/i);
 const baselineVersion = baselineMatch?.[1];
 const baselineState = baseline.match(/Estado:\s*`([^`]+)`/i)?.[1];
+const baselineKitVersion = baseline.match(/Versão do Starter Kit:\s*`([^`]+)`/i)?.[1];
 if (!baselineVersion) {
   errors.push("project/BASELINE.md não declara a versão atual.");
+}
+if (kitVersion && baselineKitVersion !== kitVersion) {
+  errors.push(
+    `project/BASELINE.md registra Starter Kit ${baselineKitVersion ?? "sem versão"}, mas VERSION contém ${kitVersion}.`,
+  );
 }
 
 const questions = read("project/OPEN_QUESTIONS.md")
@@ -273,6 +294,62 @@ for (const [id, row] of indexRows) {
     new RegExp(`^${id}(?:-|\\.|$)`, "i").test(name),
   );
   if (!hasFile) errors.push(`${id} está ${row.status} no índice, mas não possui arquivo de spec.`);
+}
+
+const allowedProposalStates = new Set([
+  "captured",
+  "evaluating",
+  "accepted",
+  "rejected",
+  "deferred",
+  "implemented",
+  "validated",
+]);
+const allowedEvidenceLevels = new Set([
+  "experimental",
+  "emerging",
+  "established",
+  "contested",
+]);
+const proposalDir = path.join(root, "proposals");
+const proposalFiles = fs.existsSync(proposalDir)
+  ? fs.readdirSync(proposalDir).filter((name) => /^P-\d+.*\.md$/i.test(name))
+  : [];
+const proposalIndex = read("proposals/INDEX.md");
+const proposalIndexRows = new Map();
+for (const line of proposalIndex.split(/\r?\n/)) {
+  if (!/^\|\s*P-\d+\s*\|/i.test(line)) continue;
+  const cells = line.split("|").slice(1, -1).map((cell) => cell.trim());
+  proposalIndexRows.set(cells[0].toUpperCase(), {
+    status: cells[2],
+    evidenceLevel: cells[3],
+  });
+}
+for (const name of proposalFiles) {
+  const content = read(path.join("proposals", name));
+  const id = content.match(/^id:\s*(P-\d+)$/im)?.[1]?.toUpperCase();
+  const status = content.match(/^status:\s*(.+)$/im)?.[1]?.trim();
+  const evidenceLevel = content.match(/^evidence_level:\s*(.+)$/im)?.[1]?.trim();
+  if (!id) errors.push(`${name} não declara id P-NNN no frontmatter.`);
+  if (!allowedProposalStates.has(status)) {
+    errors.push(`${name} usa estado de proposta desconhecido: ${status ?? "ausente"}.`);
+  }
+  if (!allowedEvidenceLevels.has(evidenceLevel)) {
+    errors.push(`${name} usa nível de evidência desconhecido: ${evidenceLevel ?? "ausente"}.`);
+  }
+  const indexedProposal = id ? proposalIndexRows.get(id) : undefined;
+  if (id && !indexedProposal) {
+    errors.push(`${name} não possui linha correspondente em proposals/INDEX.md.`);
+  } else if (indexedProposal) {
+    if (indexedProposal.status !== status) {
+      errors.push(`${name} está ${status}, mas proposals/INDEX.md registra ${indexedProposal.status}.`);
+    }
+    if (indexedProposal.evidenceLevel !== evidenceLevel) {
+      errors.push(
+        `${name} usa evidência ${evidenceLevel}, mas proposals/INDEX.md registra ${indexedProposal.evidenceLevel}.`,
+      );
+    }
+  }
 }
 
 console.log(`Readiness check: ${root}`);

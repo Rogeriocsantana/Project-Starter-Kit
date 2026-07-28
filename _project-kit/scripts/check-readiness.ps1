@@ -8,8 +8,15 @@ $errors = [System.Collections.Generic.List[string]]::new()
 $warnings = [System.Collections.Generic.List[string]]::new()
 
 $requiredFiles = @(
+    "VERSION",
     "AGENTS_FULL.md",
+    "governance/WHY.md",
+    "governance/PRINCIPLES.md",
+    "governance/KNOWLEDGE_MODEL.md",
+    "governance/GOVERNANCE.md",
     "project/PROJECT.md",
+    "project/PROJECT_PRINCIPLES.md",
+    "project/DOMAIN_GLOSSARY.md",
     "project/CONSTRAINTS.md",
     "project/ARCHITECTURE.md",
     "project/FEATURE_MAP.md",
@@ -32,6 +39,9 @@ $requiredFiles = @(
     "CHANGELOG.md",
     "ACTIVITY_LOG.md",
     "generated/README.md",
+    "proposals/README.md",
+    "proposals/INDEX.md",
+    "proposals/_TEMPLATE.md",
     "specs/INDEX.md",
     "specs/CLAIMS.md",
     "specs/QUICK_TASKS_LOG.md"
@@ -63,6 +73,14 @@ foreach ($relativePath in $requiredFiles) {
     if (-not (Test-Path -LiteralPath $fullPath -PathType Leaf)) {
         $errors.Add("Arquivo obrigatório ausente: $relativePath")
     }
+}
+
+$kitVersionPath = Join-Path $Root "VERSION"
+$kitVersion = if (Test-Path -LiteralPath $kitVersionPath) {
+    (Get-Content -LiteralPath $kitVersionPath -Raw).Trim()
+} else { "" }
+if ($kitVersion -notmatch '^\d+\.\d+\.\d+$') {
+    $errors.Add("VERSION não contém uma versão semântica válida: $kitVersion")
 }
 
 $briefPath = Join-Path $Root "project/PROJECT.md"
@@ -145,10 +163,15 @@ $baselinePath = Join-Path $Root "project/BASELINE.md"
 if (Test-Path -LiteralPath $baselinePath) {
     $baselineContent = Get-Content -LiteralPath $baselinePath -Raw
     $versionMatch = [regex]::Match($baselineContent, 'Versão atual:\s*`([^`]+)`', 'IgnoreCase')
+    $kitVersionMatch = [regex]::Match($baselineContent, 'Versão do Starter Kit:\s*`([^`]+)`', 'IgnoreCase')
     $stateMatch = [regex]::Match($baselineContent, 'Estado:\s*`([^`]+)`', 'IgnoreCase')
     if ($versionMatch.Success) { $baselineVersion = $versionMatch.Groups[1].Value }
     if ($stateMatch.Success) { $baselineState = $stateMatch.Groups[1].Value }
     if (-not $baselineVersion) { $errors.Add("BASELINE.md não declara a versão atual.") }
+    $baselineKitVersion = if ($kitVersionMatch.Success) { $kitVersionMatch.Groups[1].Value } else { "" }
+    if ($kitVersion -and $baselineKitVersion -ne $kitVersion) {
+        $errors.Add("BASELINE.md registra Starter Kit $baselineKitVersion, mas VERSION contém $kitVersion.")
+    }
     if ($readySpecs -and $baselineState -ne "approved") {
         $errors.Add("Existem specs ready, mas a baseline não está approved.")
     }
@@ -263,6 +286,52 @@ foreach ($spec in $specFiles) {
     }
     if ($status -eq "in_progress" -and ($owner -eq "" -or $owner -eq "unassigned")) {
         $errors.Add("$($spec.Name) está in_progress sem owner.")
+    }
+}
+
+$allowedProposalStates = @("captured", "evaluating", "accepted", "rejected", "deferred", "implemented", "validated")
+$allowedEvidenceLevels = @("experimental", "emerging", "established", "contested")
+$proposalIndexPath = Join-Path $Root "proposals/INDEX.md"
+$proposalIndexContent = if (Test-Path -LiteralPath $proposalIndexPath) {
+    Get-Content -LiteralPath $proposalIndexPath -Raw
+} else { "" }
+$proposalIndexRows = @{}
+foreach ($line in ($proposalIndexContent -split "`r?`n")) {
+    if ($line -notmatch '^\|\s*(P-\d+)\s*\|') { continue }
+    $cells = $line.Split('|') | ForEach-Object { $_.Trim() }
+    if ($cells.Count -ge 6) {
+        $proposalIndexRows[$Matches[1].ToUpperInvariant()] = @{
+            Status = $cells[3]
+            EvidenceLevel = $cells[4]
+        }
+    }
+}
+$proposalFiles = Get-ChildItem -LiteralPath (Join-Path $Root "proposals") -Filter "P-*.md" -File -ErrorAction SilentlyContinue
+foreach ($proposal in $proposalFiles) {
+    $content = Get-Content -LiteralPath $proposal.FullName -Raw
+    $idMatch = [regex]::Match($content, '(?im)^id:\s*(P-\d+)\s*$')
+    $statusMatch = [regex]::Match($content, '(?im)^status:\s*(.+)$')
+    $evidenceMatch = [regex]::Match($content, '(?im)^evidence_level:\s*(.+)$')
+    $proposalId = if ($idMatch.Success) { $idMatch.Groups[1].Value.ToUpperInvariant() } else { "" }
+    $proposalStatus = if ($statusMatch.Success) { $statusMatch.Groups[1].Value.Trim() } else { "" }
+    $evidenceLevel = if ($evidenceMatch.Success) { $evidenceMatch.Groups[1].Value.Trim() } else { "" }
+    if (-not $proposalId) { $errors.Add("$($proposal.Name) não declara id P-NNN no frontmatter.") }
+    if ($proposalStatus -notin $allowedProposalStates) {
+        $errors.Add("$($proposal.Name) usa estado de proposta desconhecido: $proposalStatus.")
+    }
+    if ($evidenceLevel -notin $allowedEvidenceLevels) {
+        $errors.Add("$($proposal.Name) usa nível de evidência desconhecido: $evidenceLevel.")
+    }
+    if ($proposalId -and -not $proposalIndexRows.ContainsKey($proposalId)) {
+        $errors.Add("$($proposal.Name) não possui linha correspondente em proposals/INDEX.md.")
+    } elseif ($proposalId) {
+        $indexedProposal = $proposalIndexRows[$proposalId]
+        if ($indexedProposal.Status -ne $proposalStatus) {
+            $errors.Add("$($proposal.Name) está $proposalStatus, mas proposals/INDEX.md registra $($indexedProposal.Status).")
+        }
+        if ($indexedProposal.EvidenceLevel -ne $evidenceLevel) {
+            $errors.Add("$($proposal.Name) usa evidência $evidenceLevel, mas proposals/INDEX.md registra $($indexedProposal.EvidenceLevel).")
+        }
     }
 }
 

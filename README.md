@@ -2,7 +2,7 @@
 
 Template reutilizável para planejar e desenvolver projetos com requisitos rastreáveis, contexto recuperável por IA, decisões registradas e entregas verificáveis.
 
-**Versão do kit:** `2.1.0`
+**Versão do kit:** `2.2.0`
 
 > **Estado atual:** o projeto ainda está na fase de definição. O briefing em `PREENCHA_PRIMEIRO.md` precisa ser preenchido antes do planejamento da arquitetura e da implementação do produto.
 
@@ -24,7 +24,8 @@ flowchart TD
     U[Usuário] --> P[PREENCHA_PRIMEIRO.md]
     P --> I[Agente de IA]
     I --> S[Sincronização e perguntas]
-    S --> A[Arquitetura, ADRs e baseline]
+    S --> D[Domínio, princípios e decisões]
+    D --> A[Arquitetura, ADRs e baseline]
     A --> R[Roadmap e specs]
     R --> C[Código]
     C --> T[Testes e integração]
@@ -47,8 +48,13 @@ flowchart TD
 ├── COMO_USAR_O_PROJECT_KIT.md         # Guia completo de utilização
 ├── COMO_AVALIAR_A_COMPLEXIDADE.md     # Critérios de modo leve ou completo
 └── _project-kit/
+    ├── VERSION                        # Versão estrutural independente do Kit
+    ├── governance/                    # Motivação, princípios e autoridade documental
+    ├── proposals/                     # Melhorias candidatas da metodologia
     ├── project/                       # Requisitos e decisões derivados
     │   ├── PROJECT_CONTEXT.md         # Resumo operacional para retomada
+    │   ├── PROJECT_PRINCIPLES.md      # Princípios específicos opcionais
+    │   ├── DOMAIN_GLOSSARY.md         # Vocabulário canônico opcional
     │   ├── RISKS.md                   # Registro de riscos
     │   ├── OPEN_DECISIONS.md          # Escolhas ainda não resolvidas
     │   └── adr/                       # Architecture Decision Records
@@ -69,11 +75,15 @@ O código do produto deverá ser criado fora de `_project-kit/`. O kit deve perm
 ## Fluxo de trabalho
 
 ```text
-Briefing → perguntas abertas → arquitetura e ADRs → roadmap
+Briefing → perguntas abertas → domínio e decisões → arquitetura e ADRs → roadmap
 → especificações → implementação → validação → integração → relatório
 ```
 
 Nenhuma funcionalidade deve ser inventada para preencher lacunas do briefing. Requisitos indefinidos devem ser registrados como perguntas, e decisões relevantes devem ser aprovadas e documentadas antes da implementação.
+
+`README.md` orienta a navegação, mas não governa decisões. Consulte
+`_project-kit/governance/KNOWLEDGE_MODEL.md` para saber qual artefato é a fonte
+oficial de cada tipo de conhecimento.
 
 Para validar a prontidão de uma entrega no modo completo:
 

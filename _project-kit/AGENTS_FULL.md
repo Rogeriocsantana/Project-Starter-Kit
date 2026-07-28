@@ -23,6 +23,23 @@ Ao detectar mudança em `PREENCHA_PRIMEIRO.md`:
 
 Não copie respostas cegamente. Normalize, relacione e referencie a origem. Se uma interpretação técnica for necessária, registre-a como proposta ou ADR, não como fala do usuário.
 
+## Autoridade e promoção de conhecimento
+
+Leia `_project-kit/governance/KNOWLEDGE_MODEL.md` para identificar a fonte
+oficial de cada tipo de conhecimento. `README.md` e `START_HERE.md` orientam a
+navegação; não substituem baseline, glossário, ADR, spec ou relatório.
+
+- Não redefina em uma spec um termo `canonical` de
+  `_project-kit/project/DOMAIN_GLOSSARY.md`; referencie-o.
+- Discussões de domínio permanecem na spec enquanto estiverem `draft` ou
+  `proposed`.
+- Promova uma definição a `canonical` somente após decisão explícita e registre
+  origem, responsável e data.
+- Preserve definições substituídas como `deprecated`.
+- `PROJECT_PRINCIPLES.md` é opcional e só governa o projeto quando seus
+  princípios estiverem explicitamente aprovados.
+- Capturar uma ideia em `proposals/` não autoriza sua adoção em projetos.
+
 Em cada bloco derivado, inclua imediatamente antes um marcador:
 
 ```html
@@ -53,17 +70,20 @@ As seções seguintes são obrigatórias no modo completo.
 ## Ordem de leitura
 
 1. Leia `PREENCHA_PRIMEIRO.md`.
-2. Confirme a sincronização em `_project-kit/project/INPUT_SYNC.md` e a cobertura em `_project-kit/project/DERIVATION_MAP.md`.
-3. Leia `_project-kit/project/PROJECT.md`.
-4. Leia `_project-kit/project/CONSTRAINTS.md`.
-5. Leia `_project-kit/project/ARCHITECTURE.md`.
-6. Confirme a versão e o estado em `_project-kit/project/BASELINE.md`.
-7. Leia `_project-kit/project/PROJECT_CONTEXT.md` como índice de retomada e confirme suas informações nas fontes citadas.
-8. Revise `_project-kit/project/OPEN_DECISIONS.md` e `_project-kit/project/RISKS.md` para bloqueios e exposições relacionadas.
-9. Consulte `_project-kit/planning/ROADMAP.md` e `_project-kit/planning/BACKLOG.md` quando a tarefa envolver sequência ou prioridade.
-10. Consulte `_project-kit/project/SKILL_ROUTER.md` e carregue somente as skills necessárias.
-11. Abra `_project-kit/specs/INDEX.md` e selecione uma spec com status `ready`.
-12. Leia a spec inteira e somente as referências citadas por ela.
+2. Confirme a versão estrutural em `_project-kit/VERSION`.
+3. Consulte `_project-kit/governance/KNOWLEDGE_MODEL.md`.
+4. Confirme a sincronização em `_project-kit/project/INPUT_SYNC.md` e a cobertura em `_project-kit/project/DERIVATION_MAP.md`.
+5. Leia `_project-kit/project/PROJECT.md`.
+6. Leia `_project-kit/project/CONSTRAINTS.md`.
+7. Leia princípios `canonical` e termos relevantes em `PROJECT_PRINCIPLES.md` e `DOMAIN_GLOSSARY.md`, quando existirem.
+8. Leia `_project-kit/project/ARCHITECTURE.md`.
+9. Confirme as versões do projeto e do Kit em `_project-kit/project/BASELINE.md`.
+10. Leia `_project-kit/project/PROJECT_CONTEXT.md` como índice de retomada e confirme suas informações nas fontes citadas.
+11. Revise `_project-kit/project/OPEN_DECISIONS.md` e `_project-kit/project/RISKS.md` para bloqueios e exposições relacionadas.
+12. Consulte `_project-kit/planning/ROADMAP.md` e `_project-kit/planning/BACKLOG.md` quando a tarefa envolver sequência ou prioridade.
+13. Consulte `_project-kit/project/SKILL_ROUTER.md` e carregue somente as skills necessárias.
+14. Abra `_project-kit/specs/INDEX.md` e selecione uma spec com status `ready`.
+15. Leia a spec inteira e somente as referências citadas por ela.
 
 Se algum arquivo obrigatório ainda estiver com marcadores como `[PREENCHER]`, não invente requisitos. Registre a dúvida em `_project-kit/project/OPEN_QUESTIONS.md` e trabalhe apenas no que não depende dela.
 

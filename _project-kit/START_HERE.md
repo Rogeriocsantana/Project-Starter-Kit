@@ -2,7 +2,11 @@
 
 Este diretório é um template isolado para agentes humanos ou de IA trabalharem com segurança e em paralelo. O código do produto deve ficar fora de `_project-kit/`.
 
-Versão estrutural do kit: `2.1.0`. Consulte `CHANGELOG.md` para mudanças do template e `ACTIVITY_LOG.md` para a linha do tempo de contribuições.
+Versão estrutural do kit: `2.2.0`. Consulte `VERSION` e `CHANGELOG.md` para mudanças do template e `ACTIVITY_LOG.md` para a linha do tempo de contribuições.
+
+Antes de ampliar o processo, consulte `governance/WHY.md`,
+`governance/PRINCIPLES.md` e `governance/KNOWLEDGE_MODEL.md`. O Kit organiza
+decisões; não decide pelo projeto.
 
 ## Escolha o nível certo
 
@@ -64,7 +68,7 @@ As pastas `_project-kit/references/` e `_project-kit/brand/` servem como direcio
 
 ## Fluxo recomendado
 
-Briefing → perguntas abertas → arquitetura e ADRs → roadmap → specs → execução → validação → integração → relatório.
+Briefing → perguntas abertas → domínio e decisões → arquitetura e ADRs → roadmap → specs → execução → validação → integração → relatório.
 
 Não comece a implementação enquanto os requisitos essenciais estiverem indefinidos.
 

@@ -2,11 +2,34 @@
 
 O `_project-kit/` reúne briefing, contexto operacional, referências, materiais de marca, arquitetura, ADRs, planejamento, especificações e relatórios usados para orientar agentes durante o desenvolvimento.
 
-A versão estrutural vigente do kit é `2.1.0` e seu histórico fica em `_project-kit/CHANGELOG.md`.
+A versão estrutural vigente do kit é `2.2.0`, registrada em
+`_project-kit/VERSION`; seu histórico fica em `_project-kit/CHANGELOG.md`.
 
 Ele não faz parte do produto final. O código, os testes e os assets aprovados do produto devem ser criados fora dessa pasta.
 
 Antes de escolher o modo, use `COMO_AVALIAR_A_COMPLEXIDADE.md` para fazer a avaliação inicial.
+
+## Como o conhecimento é governado
+
+O Kit separa intenção, vocabulário, decisões, trabalho autorizado e evidência.
+Consulte:
+
+- `_project-kit/governance/WHY.md` para a finalidade e os limites do Kit;
+- `_project-kit/governance/PRINCIPLES.md` para seus princípios estáveis;
+- `_project-kit/governance/KNOWLEDGE_MODEL.md` para a autoridade de cada artefato;
+- `_project-kit/governance/GOVERNANCE.md` para evolução e versionamento;
+- `_project-kit/proposals/` para melhorias candidatas da metodologia.
+
+`README.md` orienta; não governa. Quando documentos divergirem, prevalece a
+fonte oficial do tipo de conhecimento em questão.
+
+`PROJECT_PRINCIPLES.md` e `DOMAIN_GLOSSARY.md` são opcionais. Use-os somente
+quando princípios duradouros ou ambiguidade de domínio justificarem o custo.
+Discussões nascem em specs; definições aprovadas podem ser promovidas ao
+glossário como `canonical`.
+
+Projetos registram sua baseline em `project/BASELINE.md` e a versão estrutural do
+Kit separadamente. Atualizações do Kit nunca são automáticas.
 
 ## Preciso usar o fluxo completo?
 
