@@ -2,11 +2,12 @@
 
 Este diretório é um template isolado para agentes humanos ou de IA trabalharem com segurança e em paralelo. O código do produto deve ficar fora de `_project-kit/`.
 
-Versão estrutural do kit: `2.2.0`. Consulte `VERSION` e `CHANGELOG.md` para mudanças do template e `ACTIVITY_LOG.md` para a linha do tempo de contribuições.
+Versão estrutural do kit: `2.3.0`. Consulte `VERSION` e `CHANGELOG.md` para mudanças do template e `ACTIVITY_LOG.md` para a linha do tempo de contribuições.
 
 Antes de ampliar o processo, consulte `governance/WHY.md`,
-`governance/PRINCIPLES.md` e `governance/KNOWLEDGE_MODEL.md`. O Kit organiza
-decisões; não decide pelo projeto.
+`governance/PRINCIPLES.md`, `governance/KNOWLEDGE_MODEL.md` e, quando houver
+interface, `governance/DESIGN_DISCIPLINE.md`. O Kit organiza decisões; não
+decide pelo projeto.
 
 ## Escolha o nível certo
 
@@ -58,7 +59,8 @@ Se qualquer gatilho de conversão ocorrer durante a execução, pare e converta 
 2. Preencha somente `PREENCHA_PRIMEIRO.md`.
 3. Coloque referências e materiais nas pastas indicadas dentro do próprio formulário.
 4. Peça ao agente para avaliar complexidade, levantar perguntas, decisões e riscos e sincronizar os documentos derivados, incluindo o contexto operacional e o planejamento.
-5. Aprove a arquitetura, a stack e a baseline propostas.
+5. Aprove a arquitetura, a stack, a baseline e, quando aplicável, a hipótese de
+   direção de Design propostas.
 6. O agente cria e cadastra as specs.
 7. Execute `node _project-kit/scripts/check-readiness.mjs` em qualquer sistema ou use o script PowerShell no Windows.
 8. Execute `node _project-kit/scripts/generate-project-views.mjs` para atualizar as visões operacionais.
@@ -68,7 +70,9 @@ As pastas `_project-kit/references/` e `_project-kit/brand/` servem como direcio
 
 ## Fluxo recomendado
 
-Briefing → perguntas abertas → domínio e decisões → arquitetura e ADRs → roadmap → specs → execução → validação → integração → relatório.
+Briefing → perguntas abertas → domínio e decisões → arquitetura e ADRs → contexto
+e direção de Design → roadmap → specs → execução → validação funcional e
+Visual/UI Review → integração → relatório.
 
 Não comece a implementação enquanto os requisitos essenciais estiverem indefinidos.
 

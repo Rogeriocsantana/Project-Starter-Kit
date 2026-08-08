@@ -7,6 +7,7 @@ Consulte esta tabela antes de executar uma spec. Use somente as skills disponív
 | Site, landing page, portal ou app web hospedado | `sites:sites-building`, depois `sites:sites-hosting` | build validado e URL quando solicitado |
 | Implementar design do Figma em código | `figma:figma-design-to-code` | comparação visual e testes |
 | Criar ou alterar design no Figma | `figma:figma-use` + skill específica do tipo de arquivo | link/nós criados e inspeção |
+| Definir ou revisar UI/UX sem ferramenta específica | disciplina em `governance/DESIGN_DISCIPLINE.md` | decisões derivadas e Visual/UI Review |
 | Gerar ou editar imagens bitmap | `imagegen` | arquivo visual inspecionado |
 | Criar ou editar planilha | `spreadsheets:Spreadsheets` | workbook validado |
 | Controlar Excel já aberto | `spreadsheets:excel-live-control` | alterações confirmadas na sessão |
@@ -24,3 +25,6 @@ Consulte esta tabela antes de executar uma spec. Use somente as skills disponív
 - Se várias skills se aplicarem, use o menor conjunto suficiente e declare a ordem.
 - Não force uma skill apenas porque ela existe.
 - Skills orientam o método; `PROJECT.md`, `CONSTRAINTS.md` e a spec definem o resultado.
+- Skills externas podem contribuir com técnicas, mas não substituem
+  `DESIGN_CONTEXT.md`, `DESIGN_DIRECTION.md`, `DESIGN_SYSTEM.md` nem decisões
+  aprovadas do projeto.

@@ -26,4 +26,7 @@ estáveis e aplicáveis a projetos diferentes.
 11. **Segurança e privacidade são limites, não complementos tardios.** Segredos e
     dados reais não pertencem ao repositório ou aos exemplos do Kit.
 12. **A metodologia deve obedecer aos próprios princípios.** Sua evolução nasce
-    de evidência prática, não apenas da possibilidade de um problema futuro.
+   de evidência prática, não apenas da possibilidade de um problema futuro.
+13. **A experiência deriva do produto, não de um template visual.** Direção,
+   interação e sistema visual devem nascer de público, tarefas, contexto,
+   referências e restrições já conhecidos.

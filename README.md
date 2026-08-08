@@ -2,7 +2,7 @@
 
 Template reutilizável para planejar e desenvolver projetos com requisitos rastreáveis, contexto recuperável por IA, decisões registradas e entregas verificáveis.
 
-**Versão do kit:** `2.2.0`
+**Versão do kit:** `2.3.0`
 
 > **Estado atual:** o projeto ainda está na fase de definição. O briefing em `PREENCHA_PRIMEIRO.md` precisa ser preenchido antes do planejamento da arquitetura e da implementação do produto.
 
@@ -26,9 +26,10 @@ flowchart TD
     I --> S[Sincronização e perguntas]
     S --> D[Domínio, princípios e decisões]
     D --> A[Arquitetura, ADRs e baseline]
-    A --> R[Roadmap e specs]
+    A --> V[Contexto e direção de Design]
+    V --> R[Roadmap e specs]
     R --> C[Código]
-    C --> T[Testes e integração]
+    C --> T[Testes, UI Review e integração]
 ```
 
 `PREENCHA_PRIMEIRO.md` é a entrada do usuário. Os demais documentos operacionais são derivados e mantidos pelos agentes.
@@ -75,9 +76,19 @@ O código do produto deverá ser criado fora de `_project-kit/`. O kit deve perm
 ## Fluxo de trabalho
 
 ```text
-Briefing → perguntas abertas → domínio e decisões → arquitetura e ADRs → roadmap
-→ especificações → implementação → validação → integração → relatório
+Briefing → perguntas abertas → domínio e decisões → arquitetura e ADRs → contexto
+e direção de Design → roadmap → especificações → implementação → validação
+funcional e Visual/UI Review → integração → relatório
 ```
+
+Quando houver interface, a disciplina experimental usa:
+
+```text
+DESIGN_CONTEXT → DESIGN_DIRECTION → DESIGN_SYSTEM → SPEC → Visual/UI Review
+```
+
+Ela reutiliza discovery, requisitos, arquitetura e referências já registrados;
+não cria um segundo briefing nem permite que aparência redefina funcionalidade.
 
 Nenhuma funcionalidade deve ser inventada para preencher lacunas do briefing. Requisitos indefinidos devem ser registrados como perguntas, e decisões relevantes devem ser aprovadas e documentadas antes da implementação.
 

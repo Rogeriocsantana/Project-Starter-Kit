@@ -13,6 +13,7 @@
 | 2026-07-20 | Codex — Confirmou a conclusão posterior da renomeação física | workspace atual em `C:\Users\Roger\Desktop\WEB\Projetos\Project-Starter-Kit` |
 | 2026-07-20 | Codex — Criou GIF demonstrativo com dados fictícios e adicionou-o ao README | `docs/media/project-starter-kit-demo.gif`; `scripts/generate-demo-gif.py`; inspeção visual dos oito quadros principais |
 | 2026-07-28 | Codex — Implementou a governança experimental 2.2.0 a partir de aprendizados do Portal Maternidade | `VERSION`; `governance/`; `proposals/`; `project/DOMAIN_GLOSSARY.md`; `project/PROJECT_PRINCIPLES.md` |
+| 2026-08-08 | Codex — Implementou a disciplina experimental de Design 2.3.0 após proposta e simulação aprovadas | `governance/DESIGN_DISCIPLINE.md`; `project/DESIGN_*.md`; `project/UI_INVENTORY.md`; `reports/UI_REVIEW_TEMPLATE.md`; `proposals/P-007-disciplina-design-produto-ui-ux.md` |
 
 ## Fluxo do kit
 

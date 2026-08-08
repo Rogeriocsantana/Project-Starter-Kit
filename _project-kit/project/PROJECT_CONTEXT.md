@@ -2,7 +2,7 @@
 
 > Resumo derivado e mantido pelos agentes para retomada rápida por humanos ou assistentes de IA. Este arquivo não substitui o briefing, a baseline, a arquitetura, as perguntas abertas, os ADRs nem o índice de specs.
 
-- Versão estrutural do Project Starter Kit: `2.2.0`
+- Versão estrutural do Project Starter Kit: `2.3.0`
 - Visões automáticas: `_project-kit/generated/`
 
 ## Estado atual
@@ -23,6 +23,10 @@
 | Requisitos consolidados | `_project-kit/project/PROJECT.md` |
 | Restrições | `_project-kit/project/CONSTRAINTS.md` |
 | Arquitetura e aprovação da stack | `_project-kit/project/ARCHITECTURE.md` |
+| Contexto de experiência e interface | `_project-kit/project/DESIGN_CONTEXT.md` |
+| Direção visual e de experiência | `_project-kit/project/DESIGN_DIRECTION.md` |
+| Fundação do Design System | `_project-kit/project/DESIGN_SYSTEM.md` |
+| Estado real das interfaces | `_project-kit/project/UI_INVENTORY.md` |
 | Baseline vigente | `_project-kit/project/BASELINE.md` |
 | Decisões arquiteturais | `_project-kit/project/adr/` |
 | Perguntas abertas | `_project-kit/project/OPEN_QUESTIONS.md` |

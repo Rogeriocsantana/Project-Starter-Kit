@@ -2,7 +2,7 @@
 
 O `_project-kit/` reúne briefing, contexto operacional, referências, materiais de marca, arquitetura, ADRs, planejamento, especificações e relatórios usados para orientar agentes durante o desenvolvimento.
 
-A versão estrutural vigente do kit é `2.2.0`, registrada em
+A versão estrutural vigente do kit é `2.3.0`, registrada em
 `_project-kit/VERSION`; seu histórico fica em `_project-kit/CHANGELOG.md`.
 
 Ele não faz parte do produto final. O código, os testes e os assets aprovados do produto devem ser criados fora dessa pasta.
@@ -198,6 +198,31 @@ _project-kit/references/research/
 Depois, liste os arquivos e explique o que deve ser observado na seção Imagens e referências de `PREENCHA_PRIMEIRO.md`. O agente atualizará `_project-kit/references/REFERENCE_INDEX.md`.
 
 As referências servem como direcionamento. O agente não deve copiá-las literalmente nem importá-las automaticamente no produto.
+
+### Como o Design é derivado
+
+Em projetos com interface, o agente não começa escolhendo um template ou uma
+biblioteca visual. Ele reutiliza produto, público, jornadas, segurança,
+arquitetura, qualidade e referências já documentados.
+
+```text
+DESIGN_CONTEXT → DESIGN_DIRECTION → DESIGN_SYSTEM → SPEC → Visual/UI Review
+```
+
+- `DESIGN_CONTEXT.md` sintetiza o que já é conhecido e registra somente lacunas
+  realmente novas.
+- `DESIGN_DIRECTION.md` propõe uma hipótese visual fundamentada, não um estilo
+  universal.
+- `DESIGN_SYSTEM.md` preserva tokens, componentes, estados, responsividade,
+  acessibilidade e motion independentemente da stack.
+- `UI_INVENTORY.md` distingue conceito, preview, candidato, integração parcial,
+  funcionalidade e validação.
+- `UI_REVIEW_TEMPLATE.md` verifica contexto, hierarquia, densidade, estados,
+  responsividade, acessibilidade, segurança e coerência antes da conclusão.
+
+Referências fornecidas e decisões aprovadas prevalecem sobre inspirações
+externas genéricas. Uma tela visualmente convincente não deve ser descrita como
+funcional sem evidência de integração.
 
 ## Passo 3 — Adicionar materiais de marca
 

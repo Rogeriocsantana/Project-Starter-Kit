@@ -14,11 +14,16 @@ $requiredFiles = @(
     "governance/PRINCIPLES.md",
     "governance/KNOWLEDGE_MODEL.md",
     "governance/GOVERNANCE.md",
+    "governance/DESIGN_DISCIPLINE.md",
     "project/PROJECT.md",
     "project/PROJECT_PRINCIPLES.md",
     "project/DOMAIN_GLOSSARY.md",
     "project/CONSTRAINTS.md",
     "project/ARCHITECTURE.md",
+    "project/DESIGN_CONTEXT.md",
+    "project/DESIGN_DIRECTION.md",
+    "project/DESIGN_SYSTEM.md",
+    "project/UI_INVENTORY.md",
     "project/FEATURE_MAP.md",
     "project/SKILL_ROUTER.md",
     "project/INPUT_SYNC.md",
@@ -42,6 +47,7 @@ $requiredFiles = @(
     "proposals/README.md",
     "proposals/INDEX.md",
     "proposals/_TEMPLATE.md",
+    "reports/UI_REVIEW_TEMPLATE.md",
     "specs/INDEX.md",
     "specs/CLAIMS.md",
     "specs/QUICK_TASKS_LOG.md"
@@ -72,6 +78,21 @@ foreach ($relativePath in $requiredFiles) {
     $fullPath = Join-Path $Root $relativePath
     if (-not (Test-Path -LiteralPath $fullPath -PathType Leaf)) {
         $errors.Add("Arquivo obrigatório ausente: $relativePath")
+    }
+}
+
+foreach ($relativePath in @(
+    "project/DESIGN_CONTEXT.md",
+    "project/DESIGN_DIRECTION.md",
+    "project/DESIGN_SYSTEM.md",
+    "project/UI_INVENTORY.md"
+)) {
+    $fullPath = Join-Path $Root $relativePath
+    if (Test-Path -LiteralPath $fullPath -PathType Leaf) {
+        $content = Get-Content -LiteralPath $fullPath -Raw
+        if ($content -notmatch '## Decisões de Design derivadas deste documento') {
+            $errors.Add("$relativePath não contém decisões de Design derivadas.")
+        }
     }
 }
 

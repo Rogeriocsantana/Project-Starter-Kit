@@ -77,13 +77,15 @@ As seções seguintes são obrigatórias no modo completo.
 6. Leia `_project-kit/project/CONSTRAINTS.md`.
 7. Leia princípios `canonical` e termos relevantes em `PROJECT_PRINCIPLES.md` e `DOMAIN_GLOSSARY.md`, quando existirem.
 8. Leia `_project-kit/project/ARCHITECTURE.md`.
-9. Confirme as versões do projeto e do Kit em `_project-kit/project/BASELINE.md`.
-10. Leia `_project-kit/project/PROJECT_CONTEXT.md` como índice de retomada e confirme suas informações nas fontes citadas.
-11. Revise `_project-kit/project/OPEN_DECISIONS.md` e `_project-kit/project/RISKS.md` para bloqueios e exposições relacionadas.
-12. Consulte `_project-kit/planning/ROADMAP.md` e `_project-kit/planning/BACKLOG.md` quando a tarefa envolver sequência ou prioridade.
-13. Consulte `_project-kit/project/SKILL_ROUTER.md` e carregue somente as skills necessárias.
-14. Abra `_project-kit/specs/INDEX.md` e selecione uma spec com status `ready`.
-15. Leia a spec inteira e somente as referências citadas por ela.
+9. Quando houver interface, leia `_project-kit/governance/DESIGN_DISCIPLINE.md` e
+   os artefatos de Design aplicáveis citados pela spec.
+10. Confirme as versões do projeto e do Kit em `_project-kit/project/BASELINE.md`.
+11. Leia `_project-kit/project/PROJECT_CONTEXT.md` como índice de retomada e confirme suas informações nas fontes citadas.
+12. Revise `_project-kit/project/OPEN_DECISIONS.md` e `_project-kit/project/RISKS.md` para bloqueios e exposições relacionadas.
+13. Consulte `_project-kit/planning/ROADMAP.md` e `_project-kit/planning/BACKLOG.md` quando a tarefa envolver sequência ou prioridade.
+14. Consulte `_project-kit/project/SKILL_ROUTER.md` e carregue somente as skills necessárias.
+15. Abra `_project-kit/specs/INDEX.md` e selecione uma spec com status `ready`.
+16. Leia a spec inteira e somente as referências citadas por ela.
 
 Se algum arquivo obrigatório ainda estiver com marcadores como `[PREENCHER]`, não invente requisitos. Registre a dúvida em `_project-kit/project/OPEN_QUESTIONS.md` e trabalhe apenas no que não depende dela.
 
@@ -97,6 +99,9 @@ Se algum arquivo obrigatório ainda estiver com marcadores como `[PREENCHER]`, n
 - Use agentes paralelos apenas para specs independentes segundo `_project-kit/specs/CLAIMS.md`.
 - Para decisões irreversíveis, custos, produção, credenciais ou mudanças de escopo, solicite autorização.
 - Imagens em `_project-kit/references/` e arquivos de `_project-kit/brand/` são direcionamento; não devem ser importados automaticamente no produto.
+- Referências fornecidas pelo projeto e decisões aprovadas prevalecem sobre
+  referências externas genéricas. Não copie ações, campos, métricas ou estados
+  apenas porque aparecem em uma referência visual.
 - Não crie código do produto dentro de `_project-kit/`.
 - Assets destinados ao produto devem ser copiados, otimizados e registrados em `src/assets/` ou no local definido pela arquitetura.
 
@@ -133,6 +138,15 @@ Quando o usuário não tiver preferência, priorize a solução mais simples que
 12. Adicione uma linha resumida e verificável em `_project-kit/ACTIVITY_LOG.md`.
 13. Regenere `_project-kit/generated/` quando a spec alterar fontes do dashboard, timeline, dependências, rastreabilidade, release notes ou histórico de contribuições.
 
+Quando houver impacto de interface, antes de concluir também:
+
+14. confirme que contexto, direção e Design System aplicáveis foram consultados;
+15. atualize o estado real das telas em `project/UI_INVENTORY.md`;
+16. execute o Visual/UI Review proporcional usando
+    `reports/UI_REVIEW_TEMPLATE.md`;
+17. registre separadamente evidência funcional, visual, responsiva e de
+    acessibilidade, sem apresentar preview como funcionalidade integrada.
+
 `done` significa validada isoladamente. `integrated` é um estado adicional do claim, não um estado substituto da spec: significa incorporada ao conjunto e validada novamente. Se a integração falhar de forma técnica ou comportamental, siga `_project-kit/specs/CLAIMS.md`: interrompa o raio afetado, preserve evidências, reverta ao último estado funcional e devolva a spec causadora para `blocked`.
 
 Antes de marcar `integrated`, faça revisão pós-integração de contratos, schemas, endpoints, eventos, consumidores e critérios de aceite. Build verde sem essa revisão não comprova integração correta.
@@ -151,6 +165,10 @@ Uma spec só está concluída quando:
 - cada critério possui evidência verificável no relatório;
 - testes, lint, build e verificações aplicáveis passam;
 - estados de erro, carregamento, vazio e acessibilidade foram considerados quando houver interface;
+- interfaces com impacto relevante passaram por Visual/UI Review sem bloqueios
+  críticos, ou registraram explicitamente por que o review não se aplica;
+- conceitos, previews, candidatos e telas funcionais estão classificados sem
+  alegações superiores às evidências disponíveis;
 - nenhuma credencial ou dado sensível foi adicionado;
 - documentação e índice de specs refletem o estado real;
 - o relatório de execução informa arquivos alterados, comandos executados, riscos e pendências.

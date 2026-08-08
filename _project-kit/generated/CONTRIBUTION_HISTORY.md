@@ -13,6 +13,7 @@ flowchart TD
     A6["Codex — Confirmou a conclusão posterior da renomeação física"]
     A7["Codex — Criou GIF demonstrativo com dados fictícios e adicionou-o ao README"]
     A8["Codex — Implementou a governança experimental 2.2.0 a partir de aprendizados do Portal Maternidade"]
+    A9["Codex — Implementou a disciplina experimental de Design 2.3.0 após proposta e simulação aprovadas"]
     A0 --> A1
     A1 --> A2
     A2 --> A3
@@ -21,10 +22,11 @@ flowchart TD
     A5 --> A6
     A6 --> A7
     A7 --> A8
+    A8 --> A9
 ```
 
 | Ator | Contribuições registradas |
 |---|---:|
-| Codex | 9 |
+| Codex | 10 |
 
 > Esta visão deriva de `ACTIVITY_LOG.md` e não infere identidade, modelo ou autoria ausente.

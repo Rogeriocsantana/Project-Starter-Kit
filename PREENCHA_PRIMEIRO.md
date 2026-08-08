@@ -236,7 +236,11 @@ Exemplo:
 
 ## 12. Experiência e interface
 
-> Descreva a sensação visual desejada e os dispositivos mais importantes. Você pode apontar referências na seção seguinte.
+> Descreva a sensação desejada, os contextos de uso e os dispositivos mais
+> importantes. Não precisa definir um estilo completo: o agente reutilizará as
+> respostas sobre público, jornadas, segurança, tecnologia e qualidade para
+> propor uma direção fundamentada. Você pode apontar referências na seção
+> seguinte.
 
 Exemplo:
 
@@ -254,6 +258,9 @@ Exemplo:
 - Idiomas: [PREENCHER]
 - Necessidades de acessibilidade: [PREENCHER]
 - Conteúdo fornecido por: [PREENCHER]
+- Tarefas que precisam ser mais rápidas ou evidentes: [PREENCHER]
+- Contextos que exigem maior densidade ou simplicidade: [PREENCHER]
+- Interfaces atuais que devem ser preservadas, evoluídas ou substituídas: [PREENCHER ou NAO_APLICA]
 
 ## 13. Imagens e referências
 

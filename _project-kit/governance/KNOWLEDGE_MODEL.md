@@ -7,14 +7,20 @@ tipo de conhecimento.
 |---|---|---|
 | `governance/WHY.md` | Por que o Kit existe? | estratégica do Kit |
 | `governance/PRINCIPLES.md` | Quais regras orientam o Kit? | normativa do Kit |
+| `governance/DESIGN_DISCIPLINE.md` | Como decisões de experiência e interface são produzidas e verificadas? | normativa de Design do Kit |
 | `project/PROJECT_PRINCIPLES.md` | Quais princípios específicos orientam o projeto? | normativa do projeto |
 | `project/DOMAIN_GLOSSARY.md` | O que os termos significam neste projeto? | semântica |
 | `PREENCHA_PRIMEIRO.md` | Qual é a intenção declarada pelo responsável? | entrada do usuário |
 | `project/BASELINE.md` | Qual estado do projeto foi aprovado? | referencial |
 | `project/ARCHITECTURE.md` e ADRs | Qual decisão arquitetural vigora e por quê? | arquitetural |
+| `project/DESIGN_CONTEXT.md` | Que contexto existente orienta a experiência? | síntese de Design |
+| `project/DESIGN_DIRECTION.md` | Qual hipótese visual e de experiência está vigente? | direcional de Design |
+| `project/DESIGN_SYSTEM.md` | Quais fundamentos e padrões de interface estão vigentes? | sistêmica de Design |
+| `project/UI_INVENTORY.md` | Quais interfaces existem e qual é seu estado real? | inventário de interface |
 | `project/OPEN_DECISIONS.md` | O que ainda precisa ser decidido? | fila de decisão |
 | `specs/SPEC-NNN.md` | Qual trabalho está autorizado e como será aceito? | executiva |
 | `reports/SPEC-NNN.md` | O que foi executado e comprovado? | evidencial |
+| `reports/UI_REVIEW-*.md` | A interface atende à direção, ao uso e aos critérios visuais? | evidencial de Design |
 | `CHANGELOG.md` e `PROJECT_CHANGELOG.md` | O que mudou entre versões? | histórica |
 | `README.md` e `START_HERE.md` | Como começar e navegar? | navegacional |
 | `proposals/P-NNN-*.md` | Que melhoria do Kit está sendo considerada? | exploratória |

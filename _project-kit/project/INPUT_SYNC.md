@@ -21,6 +21,10 @@ Estados: `pending`, `questions_open`, `synced`.
 | `OPEN_DECISIONS.md` | pending | | |
 | `RISKS.md` | pending | | |
 | `ARCHITECTURE.md` | pending | | |
+| `DESIGN_CONTEXT.md` | pending | | |
+| `DESIGN_DIRECTION.md` | pending | | |
+| `DESIGN_SYSTEM.md` | pending | | |
+| `UI_INVENTORY.md` | pending | | |
 | `BASELINE.md` | pending | | |
 | `PROJECT_CONTEXT.md` | pending | | |
 | `planning/ROADMAP.md` | pending | | |

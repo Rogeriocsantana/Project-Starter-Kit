@@ -18,11 +18,16 @@ const requiredFiles = [
   "governance/PRINCIPLES.md",
   "governance/KNOWLEDGE_MODEL.md",
   "governance/GOVERNANCE.md",
+  "governance/DESIGN_DISCIPLINE.md",
   "project/PROJECT.md",
   "project/PROJECT_PRINCIPLES.md",
   "project/DOMAIN_GLOSSARY.md",
   "project/CONSTRAINTS.md",
   "project/ARCHITECTURE.md",
+  "project/DESIGN_CONTEXT.md",
+  "project/DESIGN_DIRECTION.md",
+  "project/DESIGN_SYSTEM.md",
+  "project/UI_INVENTORY.md",
   "project/FEATURE_MAP.md",
   "project/SKILL_ROUTER.md",
   "project/INPUT_SYNC.md",
@@ -46,6 +51,7 @@ const requiredFiles = [
   "proposals/README.md",
   "proposals/INDEX.md",
   "proposals/_TEMPLATE.md",
+  "reports/UI_REVIEW_TEMPLATE.md",
   "specs/INDEX.md",
   "specs/CLAIMS.md",
   "specs/QUICK_TASKS_LOG.md",
@@ -90,6 +96,17 @@ for (const relativePath of requiredFiles) {
 for (const relativePath of ["project/PROJECT.md", "project/CONSTRAINTS.md"]) {
   const count = (read(relativePath).match(/\[PREENCHER/gi) ?? []).length;
   if (count > 0) warnings.push(`${relativePath} contém ${count} campo(s) [PREENCHER].`);
+}
+
+for (const relativePath of [
+  "project/DESIGN_CONTEXT.md",
+  "project/DESIGN_DIRECTION.md",
+  "project/DESIGN_SYSTEM.md",
+  "project/UI_INVENTORY.md",
+]) {
+  if (!read(relativePath).includes("## Decisões de Design derivadas deste documento")) {
+    errors.push(`${relativePath} não contém decisões de Design derivadas.`);
+  }
 }
 
 const input = fs.existsSync(inputPath) ? fs.readFileSync(inputPath, "utf8") : "";

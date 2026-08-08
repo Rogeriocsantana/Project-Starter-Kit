@@ -8,6 +8,33 @@ O formato segue versionamento semântico:
 - `MINOR`: capacidade nova compatível;
 - `PATCH`: correção ou esclarecimento sem mudar o fluxo.
 
+## [2.3.0] — 2026-08-08
+
+### Adicionado
+
+- Disciplina experimental de Design de Produto, UI/UX e Qualidade Visual.
+- Fluxo `DESIGN_CONTEXT → DESIGN_DIRECTION → DESIGN_SYSTEM → SPEC → Visual/UI Review`.
+- Templates de contexto, direção, fundação do Design System e inventário de interface.
+- Template evidencial de Visual/UI Review.
+- Proposal P-007 com origem, limites, evidência e validação futura.
+- Princípio de que a experiência deriva do produto, não de templates visuais.
+
+### Alterado
+
+- SPECs e relatórios passam a registrar impacto de Design quando aplicável.
+- Sincronização e mapa de derivação reutilizam público, jornadas, segurança,
+  experiência, referências e qualidade nos artefatos de Design.
+- Ordem de leitura, definição de pronto e guias incluem revisão visual sem
+  confundir preview, candidato e funcionalidade integrada.
+- Verificadores reconhecem os novos artefatos estruturais.
+
+### Compatibilidade
+
+- Mudança compatível e sem retrofit automático para projetos existentes.
+- A disciplina permanece `experimental`; verificadores conferem estrutura, mas
+  não tornam a aprovação visual um bloqueio universal nesta versão.
+- Nenhuma skill, script ou dependência do Taste Skill foi incorporada.
+
 ## [2.2.0] — 2026-07-28
 
 ### Adicionado

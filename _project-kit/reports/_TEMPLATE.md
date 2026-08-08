@@ -25,6 +25,19 @@
 |---|---|---|
 | CA-01 | atendido/não atendido | [teste, comando, captura, arquivo ou inspeção] |
 
+## Design e Visual/UI Review
+
+- Aplicabilidade: [aplicável / não aplicável]
+- Contexto, direção e sistema consultados:
+- Interfaces atualizadas em `UI_INVENTORY.md`:
+- Estado real da entrega: [conceito / preview / candidato / parcial / funcional / validado]
+- Conteúdo fictício ou ilustrativo identificado:
+- Responsividade e viewports verificados:
+- Acessibilidade verificada:
+- Relatório de UI Review: [caminho ou não aplicável]
+- Resultado: [approved / changes_required / não aplicável]
+- Limitações aceitas:
+
 ## Rastreabilidade da entrega
 
 - Requisitos/origens: [PREENCHA_PRIMEIRO.md §N ou RF-NNN]

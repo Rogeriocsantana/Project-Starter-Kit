@@ -62,6 +62,25 @@ branch_or_worktree: null
 
 - RNF-01: [desempenho, segurança, acessibilidade, compatibilidade ou manutenção]
 
+## Impacto de Design e experiência
+
+- Aplicabilidade: [aplicável / não aplicável]
+- Contexto: [`project/DESIGN_CONTEXT.md` ou não aplicável]
+- Direção vigente: [`project/DESIGN_DIRECTION.md` ou não aplicável]
+- Design System: [`project/DESIGN_SYSTEM.md` ou não aplicável]
+- Interfaces afetadas: [IDs de `project/UI_INVENTORY.md`]
+- Referências aprovadas: [caminhos e aspectos a aproveitar]
+- Tarefas e hierarquia que devem ser preservadas:
+- Densidade e composição por dispositivo:
+- Estados obrigatórios:
+- Acessibilidade e motion:
+- Conteúdo real, fictício ou ilustrativo:
+- Visual/UI Review: [obrigatório / proporcional / não aplicável]
+
+Não use esta seção para redefinir requisitos, capacidades, contratos ou
+decisões arquiteturais. Se o Design exigir uma mudança nessas áreas, registre a
+dependência e retorne à fonte responsável antes de implementar.
+
 ## Estados e casos de borda
 
 - Carregamento:
@@ -86,6 +105,7 @@ Cada critério deve ser independente, observável e possuir evidência após a e
 | Lint/tipos | [PREENCHER] | sem erros |
 | Build | [PREENCHER] | concluído |
 | Inspeção específica | [PREENCHER] | critérios atendidos |
+| Visual/UI Review | [método ou não aplicável] | sem bloqueios críticos |
 
 ## Evidências dos critérios
 
