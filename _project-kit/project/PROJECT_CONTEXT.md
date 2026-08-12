@@ -2,7 +2,7 @@
 
 > Resumo derivado e mantido pelos agentes para retomada rápida por humanos ou assistentes de IA. Este arquivo não substitui o briefing, a baseline, a arquitetura, as perguntas abertas, os ADRs nem o índice de specs.
 
-- Versão estrutural do Project Starter Kit: `2.3.0`
+- Versão estrutural do Project Starter Kit: `2.4.0`
 - Visões automáticas: `_project-kit/generated/`
 
 ## Estado atual

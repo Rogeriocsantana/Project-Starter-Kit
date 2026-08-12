@@ -1,6 +1,6 @@
 # Baseline do projeto
 
-- Versão do Starter Kit: `2.3.0`
+- Versão do Starter Kit: `2.4.0`
 - Versão atual: `0.1.0`
 - Estado: `draft`
 - Atualizada em: AAAA-MM-DD

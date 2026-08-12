@@ -8,6 +8,15 @@ status: draft
 
 # QUICK-NNN — Título
 
+## Governança da execução
+
+- Classe: [G0 / G1 / G2]
+- Escopo autorizado:
+- Interromper somente se:
+- Gate final:
+
+Tarefas G3/G4 não podem permanecer no modo leve.
+
 ## Resultado esperado
 
 [Uma entrega pequena e observável.]

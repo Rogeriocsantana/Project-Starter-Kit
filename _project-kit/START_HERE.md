@@ -2,12 +2,16 @@
 
 Este diretório é um template isolado para agentes humanos ou de IA trabalharem com segurança e em paralelo. O código do produto deve ficar fora de `_project-kit/`.
 
-Versão estrutural do kit: `2.3.0`. Consulte `VERSION` e `CHANGELOG.md` para mudanças do template e `ACTIVITY_LOG.md` para a linha do tempo de contribuições.
+Versão estrutural do kit: `2.4.0`. Consulte `VERSION` e `CHANGELOG.md` para mudanças do template e `ACTIVITY_LOG.md` para a linha do tempo de contribuições.
 
 Antes de ampliar o processo, consulte `governance/WHY.md`,
 `governance/PRINCIPLES.md`, `governance/KNOWLEDGE_MODEL.md` e, quando houver
 interface, `governance/DESIGN_DISCIPLINE.md`. O Kit organiza decisões; não
 decide pelo projeto.
+
+Depois de escolher o modo leve ou completo, classifique cada tarefa ou lote em
+`governance/TASK_GOVERNANCE.md`. O modo define o rastro documental; a classe
+G0–G4 define quanta interrupção e evidência o risco da mudança exige.
 
 ## Escolha o nível certo
 
@@ -75,6 +79,11 @@ e direção de Design → roadmap → specs → execução → validação funci
 Visual/UI Review → integração → relatório.
 
 Não comece a implementação enquanto os requisitos essenciais estiverem indefinidos.
+
+Para refinamentos visuais G0/G1, agrupe pedidos em lotes, apresente capturas para
+aceite antes da bateria completa e execute análise, testes e build uma vez ao
+final do lote aprovado. Escale se a solução exigir contrato, API, autorização,
+persistência ou infraestrutura.
 
 ## Prompts úteis
 

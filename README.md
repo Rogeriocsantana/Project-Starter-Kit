@@ -2,7 +2,7 @@
 
 Template reutilizável para planejar e desenvolver projetos com requisitos rastreáveis, contexto recuperável por IA, decisões registradas e entregas verificáveis.
 
-**Versão do kit:** `2.3.0`
+**Versão do kit:** `2.4.0`
 
 > **Estado atual:** o projeto ainda está na fase de definição. O briefing em `PREENCHA_PRIMEIRO.md` precisa ser preenchido antes do planejamento da arquitetura e da implementação do produto.
 

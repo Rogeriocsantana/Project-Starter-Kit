@@ -19,6 +19,7 @@ const requiredFiles = [
   "governance/KNOWLEDGE_MODEL.md",
   "governance/GOVERNANCE.md",
   "governance/DESIGN_DISCIPLINE.md",
+  "governance/TASK_GOVERNANCE.md",
   "project/PROJECT.md",
   "project/PROJECT_PRINCIPLES.md",
   "project/DOMAIN_GLOSSARY.md",

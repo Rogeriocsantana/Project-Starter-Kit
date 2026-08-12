@@ -155,7 +155,11 @@ devem ser reduzidos, combinados ou removidos.
 ## Aplicabilidade proporcional
 
 - Ajuste visual isolado e reversível pode usar modo leve se satisfizer todos os
-  demais critérios do Kit.
+  demais critérios do Kit e deve ser classificado como G0 ou G1 conforme
+  `TASK_GOVERNANCE.md`.
+- Em lotes G0/G1, implemente e mostre capturas representativas antes de executar
+  a bateria técnica completa. Após o aceite visual, valide o lote uma única vez
+  antes de gerar candidato ou publicar.
 - Nova direção, design system, jornada, navegação, responsividade estrutural ou
   revisão de várias telas exige modo completo.
 - API, domínio, autorização, dado sensível, arquitetura ou infraestrutura nunca
@@ -167,4 +171,3 @@ Esta disciplina nasceu de dificuldades observadas no Portal Maternidade e da
 avaliação seletiva de referências externas, incluindo o Taste Skill. O Project
 Starter Kit é a fonte de verdade. Nenhuma skill, biblioteca ou tecnologia
 externa é dependência desta disciplina.
-

@@ -38,6 +38,12 @@ Para cada dimensão, atribua:
 
 A pontuação orienta a decisão, mas não substitui julgamento. Um único item crítico, como dados médicos, pagamentos ou risco de segurança, pode exigir modo completo mesmo com pontuação total baixa.
 
+Esta avaliação classifica o projeto e o modo documental. Depois dela, cada
+tarefa ou lote deve receber classe G0–G4 segundo
+`_project-kit/governance/TASK_GOVERNANCE.md`. Assim, um projeto complexo pode
+executar rapidamente um ajuste visual G0, enquanto uma rotação de segredo G4
+mantém checkpoints operacionais formais.
+
 ## Regra para escolher o modo
 
 Use o modo leve somente quando a tarefa também cumprir todos os critérios de `_project-kit/START_HERE.md`.

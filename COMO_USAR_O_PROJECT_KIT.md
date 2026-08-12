@@ -2,7 +2,7 @@
 
 O `_project-kit/` reúne briefing, contexto operacional, referências, materiais de marca, arquitetura, ADRs, planejamento, especificações e relatórios usados para orientar agentes durante o desenvolvimento.
 
-A versão estrutural vigente do kit é `2.3.0`, registrada em
+A versão estrutural vigente do kit é `2.4.0`, registrada em
 `_project-kit/VERSION`; seu histórico fica em `_project-kit/CHANGELOG.md`.
 
 Ele não faz parte do produto final. O código, os testes e os assets aprovados do produto devem ser criados fora dessa pasta.
@@ -44,6 +44,11 @@ O comando `check-readiness` é destinado ao modo completo e não precisa passar 
 Use o **modo completo** quando houver produto real, múltiplos agentes, continuidade entre sessões, decisões arquiteturais, dados, integrações, contratos compartilhados, risco operacional ou manutenção futura.
 
 Na dúvida, use o modo completo.
+
+Depois de escolher o modo, classifique a tarefa ou lote em G0–G4 conforme
+`_project-kit/governance/TASK_GOVERNANCE.md`. O modo determina o volume de
+documentação; a classe determina continuidade, interrupções e gates. Uma spec
+completa pode conter refinamentos G0/G1 executados continuamente.
 
 ### Quando o modo leve deve parar
 

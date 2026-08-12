@@ -13,6 +13,22 @@ branch_or_worktree: null
 
 # SPEC-NNN — Título curto
 
+## Governança da execução
+
+```yaml
+governance:
+  class: [G0 / G1 / G2 / G3 / G4]
+  authorized_scope:
+    - [PREENCHER]
+  stop_only_if:
+    - [PREENCHER]
+  final_gate:
+    - [PREENCHER]
+```
+
+Consulte `governance/TASK_GOVERNANCE.md`. A classe pode ser reavaliada por
+checkpoint; subir de classe exige registrar a fronteira atingida.
+
 ## Resultado esperado
 
 [Descreva o resultado observável, não apenas a atividade.]

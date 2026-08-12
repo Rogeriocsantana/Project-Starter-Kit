@@ -5,6 +5,14 @@
 - Agente: [PREENCHER]
 - Data: AAAA-MM-DD
 
+## Governança aplicada
+
+- Classe inicial:
+- Classe final:
+- Fronteiras atingidas:
+- Interrupções ou escaladas:
+- Gate final executado:
+
 ## Resultado
 
 [O que ficou pronto de forma objetiva.]

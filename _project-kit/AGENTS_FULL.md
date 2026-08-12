@@ -61,6 +61,11 @@ Antes da ordem de leitura completa, determine o modo:
 - O usuário pode exigir o modo completo mesmo para uma tarefa pequena.
 - Um agente não pode escolher o modo leve apenas para evitar documentação ou validação.
 
+Depois de determinar o modo, classifique a unidade de mudança conforme
+`_project-kit/governance/TASK_GOVERNANCE.md`. O modo controla documentação e
+coordenação; G0–G4 controlam interrupções, evidências e gates. Uma spec completa
+pode conter lotes G0/G1 contínuos.
+
 No modo leve, leia a solicitação, as partes diretamente relevantes de `_project-kit/project/PROJECT.md` e `_project-kit/project/CONSTRAINTS.md`, e use `_project-kit/specs/_QUICK_TASK_TEMPLATE.md`. Não é necessário atualizar baseline, ADR, claim, índice ou relatório separado. Ainda é obrigatório preservar alterações, respeitar segurança, validar o resultado e registrar arquivos e verificações na própria ficha, em `_project-kit/specs/QUICK_TASKS_LOG.md` e em `_project-kit/ACTIVITY_LOG.md`.
 
 Se qualquer gatilho objetivo de conversão listado em `_project-kit/START_HERE.md` ocorrer, pare. Registre a conversão no log, crie uma spec normal e siga o modo completo. Não continue no modo leve apenas porque a implementação já começou.
@@ -90,6 +95,14 @@ As seções seguintes são obrigatórias no modo completo.
 Se algum arquivo obrigatório ainda estiver com marcadores como `[PREENCHER]`, não invente requisitos. Registre a dúvida em `_project-kit/project/OPEN_QUESTIONS.md` e trabalhe apenas no que não depende dela.
 
 ## Modelo de execução
+
+- Declare a classe G0–G4, o escopo autorizado, as fronteiras de interrupção e o
+  gate final antes de implementar.
+- Trabalhe continuamente dentro da classe autorizada. Lint, testes
+  desatualizados, helpers, reflow e limpeza interna não exigem nova autorização
+  quando permanecem dentro das fronteiras declaradas.
+- Interrompa quando a solução precisar subir de classe ou atingir uma fronteira
+  protegida. Não transforme ocorrências normais em checkpoints.
 
 - Uma spec deve representar uma entrega pequena, verificável e, sempre que possível, executável por um único agente.
 - Antes de editar, confirme escopo, dependências, arquivos permitidos e critérios de aceite.

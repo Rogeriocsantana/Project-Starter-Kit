@@ -8,6 +8,30 @@
 
 ## Project Starter Kit
 
+## [2.4.0] — 2026-08-12
+
+### Adicionado
+
+- Governança proporcional por unidade de mudança com classes G0–G4.
+- Declaração mínima de escopo autorizado, fronteiras de interrupção e gate final.
+- Regra de continuidade para ocorrências normais dentro da classe autorizada.
+- Fluxo visual em lotes: captura e aceite antes da bateria técnica completa.
+- Proposal P-008, originada na SPEC-011 do Portal Maternidade.
+
+### Alterado
+
+- Templates de SPEC e tarefa rápida passam a registrar a classe de governança.
+- Instruções distinguem modo leve/completo de classe G0–G4.
+- Disciplina de Design incorpora o ciclo rápido de refinamento G0/G1.
+
+### Compatibilidade
+
+- Mudança compatível e sem retrofit automático para projetos existentes.
+- G0–G4 não reduzem controles de segurança, dados, identidade, autorização,
+  produção ou infraestrutura.
+- A prática permanece `experimental` até validação em outro projeto.
+
+
 ## [2.3.0] — 2026-08-08
 
 ### Adicionado

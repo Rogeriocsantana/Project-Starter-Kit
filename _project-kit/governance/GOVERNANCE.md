@@ -72,3 +72,11 @@ Atualizações do Kit em projetos existentes não são automáticas. Devem infor
 
 Uma retrospectiva do Kit é recomendada somente em marcos relevantes, como MVP,
 versão 1.0, incidente significativo ou migração estrutural.
+
+## Governança da execução
+
+A evolução do Kit e a execução de tarefas são controles distintos. Para graduar
+uma tarefa, lote ou checkpoint pelo risco real, consulte
+`TASK_GOVERNANCE.md`. As classes G0–G4 complementam o modo leve/completo e não
+reduzem controles aplicáveis a dados, identidade, autorização, produção ou
+infraestrutura.
